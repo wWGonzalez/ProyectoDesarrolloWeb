@@ -1,0 +1,100 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Createc</title>
+		<meta charset="utf-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/main.css' %}">
+		<link rel="icon" type="image/x-icon" href="{% static 'images/createc.ico' %}"/>
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]
+		<button type="submit" value="Submit" class="btn btn-success" onclick="Iniciar()">teclaso</button>
+		<button type="submit" value="Submit" class="btn btn-success" onclick="clicked()">teclaso2</button>
+		-->
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+					<h1><a href="{% url 'parcial1:principal' %}" class="btn btn-default">Pagina principal{% if user.is_authenticated == True %} : Active user: {{ user.username }} {% endif %}</a>
+					</h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="{% url 'parcial1:principal' %}">Pagina principal</a></li>
+											{% if user.is_authenticated == True %}
+											<li><a href="{% url 'parcial1:empleado' %}">Empleado</a></li>
+											<li><a href="{% url 'parcial1:cliente' %}">Cliente</a></li>
+											<li><a href="{% url 'parcial1:pedido' %}">Pedido</a> </li>
+											<form method = "POST">
+											{% csrf_token %}
+											<li><a href="{% url 'parcial1:logout' %}">cerrar sesion</a></li>
+											</form>
+											{% endif %}
+
+		{% if user.is_authenticated == False %}
+			<li><a href="{% url 'parcial1:login' %}" class="btn btn-default">login</a></li>		
+		{% endif %}
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>CREATEC</h2>
+							<p>CREANDO CON TECNOLOGIA</a></p>
+							<ul class="actions">
+								<li><a href="{% url 'parcial1:listaPedido' %}" class="button special">REVISAR PEDIDO</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Ver Mas</a>
+					</section>
+
+				
+				 {% block contenido %} {% endblock %}
+				 
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/josepherez" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://goo.gl/gcfx6s" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+							<li><a href="https://www.facebook.com/werner.gonzalez.39" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; CREATEC</li><li>Design: UMG.17 |CREATIVE COMONS| </a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script type="text/javascript" src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'assets/js/skel.min.js'%}"></script>
+			<script type="text/javascript" src="{% static 'assets/js/util.js'%}"></script>
+			<script type="text/javascript" src="{% static 'assets/js/main.js'%}"></script>
+			<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+
+
+	</body>
+</html>

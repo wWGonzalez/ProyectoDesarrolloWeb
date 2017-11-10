@@ -1,0 +1,57 @@
+{% extends 'heredac.html' %}
+{% load staticfiles %}
+{% block contenido %}
+
+<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>TRABAJO RAPIDO Y EFICIENTE</h2>
+								<p>Realizamos en el menor tiempo posible nuestros servicios<br />
+								garantizando la calidad y seguridad de sus datos, en los documentos impresos.</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<!--
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+							-->
+							<div class="image">
+								<img src="{% static 'images/pic01.jpg' %}">
+								</div>
+							<div class="content">
+								<h2>AUTORIZADOS POR SAT</h2>
+								<p>Contamos con la autorizacion del registro fiscal de imprentas SAT.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image">
+								<img src="{% static 'images/pic02.jpg' %}">
+								</div>
+							<div class="content">
+								<h2>IMPRESION DIGITAL<br />
+								FULL COLOR</h2>
+								<p>Tenemos impresiones full color para cualquier finalidad, te imprimimos desde facturas, afiches, volantes y mas.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image">
+								<img src="{% static 'images/pic03.jpg' %}">
+								</div>
+							<div class="content">
+								<h2>EL TIEMPO ES NUESTRO AMIGO<br />
+								ENTREGA INMEDIATA</h2>
+								<p>Imprimimos facturas en la menor cantidad de tiempo posible (25 a 45 min). mantas afiches volantes entrega inmediata</p>
+							</div>
+						</section>
+					</section>
+
+
+{% endblock %}

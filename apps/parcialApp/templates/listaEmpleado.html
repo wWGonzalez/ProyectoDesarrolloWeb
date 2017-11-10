@@ -1,0 +1,22 @@
+{% extends 'heredac.html' %}
+{% block contenido%}
+<h3>Listado de Empleados</h3>
+<table id="one" class="wrapper style5">
+	<tr>
+		<td>Nombre</td>
+		<td>Telefono</td>
+		<td>Fecha</td>
+		<td>Editar</td>
+		<td>Eliminar</td>
+	</tr>
+	{% for est in object_list %}
+	<tr>
+		<td>{{ est.nombre }}</td>
+		<td>{{ est.telefono }}</td>
+		<td>{{ est.fecha }}</td>
+		<td><a href="{% url 'parcial1:editar_empleado' est.id %}">Editar</a></td>
+		<td><a href="{% url 'parcial1:eliminar_empleado' est.id %}">Eliminar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'heredac.html' %}
+{% block contenido%}
+<h3>Listado de pedidos</h3>
+<table id="one" class="wrapper style5">
+	<tr>
+		<td>Cliente</td>
+		<td>Empleado</td>
+		<td>Nit</td>
+		<td>Nombre del negocio</td>
+		<td>Tamano de hoja</td>
+		<td>Tipo de papel</td>
+		<td>Cantidad pedido</td>
+		<td>Precio</td>
+		<td>Estado del pedido</td>
+		<td>Editar</td>
+		<td>Eliminar</td>
+	</tr>
+	{% for est in object_list %}
+	<tr>
+		<td>{{ est.cliente_pedido }}</td>
+		<td>{{ est.empleado_pedido }}</td>
+		<td>{{ est.nit }}</td>
+		<td>{{ est.nombre_de_negocio }}</td>
+
+
+		{% if est.get_tamano == '0' %}
+			<td>Cuarto de Oficio</td>
+		{% elif est.get_tamano == '1' %}	
+			<td>Media Carta</td>
+		{% elif est.get_tamano == '2' %}	
+			<td>Carta</td>
+		{% elif est.get_tamano == '3' %}	
+			<td>Oficio</td>
+		{% endif %}
+
+		{% if est.get_tipo_papel == '0' %}
+			<td>Normal</td>
+		{% elif est.get_tipo_papel == '1' %}	
+			<td>Sensibilizado</td>
+		{% endif %}
+
+		<td>{{ est.cantidad }}</td>
+		<td>{{ est.precio_pedido }}</td>
+
+		{% if est.get_estado == False %}
+			<td>No entregado</td>
+		{% elif est.get_estado == True %}	
+			<td>Entregado</td>
+		{% endif %}
+
+		<td><a href="{% url 'parcial1:editar_pedido' est.id %}">Editar</a></td>
+		<td><a href="{% url 'parcial1:eliminar_pedido' est.id %}">Eliminar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

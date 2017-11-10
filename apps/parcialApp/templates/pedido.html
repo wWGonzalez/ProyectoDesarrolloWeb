@@ -1,0 +1,54 @@
+{% extends 'heredac.html '%}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+<section id="one" class="wrapper style5">
+<h4>Ingreso de Clientes</h4>
+	<form method="post">
+		{% csrf_token %}
+		<div class="row uniform">
+			<div class="6u 12u$(xsmall)">
+				Empleado: {{ form.empleado_pedido }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Cliente: {{ form.cliente_pedido }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Nit: {{ form.nit }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Nombre del negocio: {{ form.nombre_de_negocio }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Tamano: {{ form.tamano }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Tipo de papel: {{ form.tipo_papel }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Cantidad: {{ form.cantidad }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Precio del pedido: {{ form.precio_pedido }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Estado de la entrega: {{ form.estado_pedido }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Fecha de la entrega: {{ form.fecha_entrega }}
+			</div>
+			<ul class="actions">
+					<li><input type="submit" value="Agregar" class="special"/></li>
+				</ul>
+				<ul class="actions">
+					<a href="{% url 'parcial1:listaPedido' %}" class="button">Lista de pedidos</a>
+				</ul>
+			</div>
+		</div>
+	</form>
+</section>
+	{% endif %}
+
+
+
+{% endblock %}

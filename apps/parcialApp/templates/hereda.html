@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina principal : {{ user.username }} </title>
+	<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/SpaceLab.css' %}">
+	<meta charset="utf-8" name="viewport" content="width=device.width,initial-scale=1">
+
+	<link rel="shortcut icon" href="{% static 'img/img.png' %}">
+
+	<center>
+		<img src="{% static 'img/dog3.jpg' %}">
+	</center>
+	<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+	
+
+	{% if user.is_authenticated %}
+		<center>
+			<h3>Active user: {{ user.username }}</h3>
+			<form method = "POST">
+				{% csrf_token %}
+				<a href="{% url 'parcial1:logout' %}" class="btn btn-warning">cerrar sesion</a>
+				
+			</form> 
+		</center>
+	{% endif %}
+
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	<table>
+	<tr>
+		<td><a href="{% url 'parcial1:principal' %}" class="btn btn-default">Pagina principal</a></td>
+		{% if user.is_authenticated == True %}
+		<td><a href="{% url 'parcial1:empleado' %}" class="btn btn-success">Empleado</a></td>
+		<td><a href="{% url 'parcial1:cliente' %}" class="btn btn-info">Cliente</a></td>
+		<td><a href="{% url 'parcial1:pedido' %}" class="btn btn-warning">Pedido</a> </li></td>
+		
+		{% endif %}
+
+		{% if user.is_authenticated == False %}
+			<td><a href="{% url 'parcial1:login' %}" class="btn btn-default">login</a></td>		
+		{% endif %}
+
+	</tr>
+	</table> 
+	</center>
+	<br>
+	<br>
+	<br>
+	{% block contenido %} {% endblock %}
+</body>
+</html>

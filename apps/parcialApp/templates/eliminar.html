@@ -1,0 +1,13 @@
+{% extends 'heredac.html' %}
+
+{% block contenido %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea Eliminar el registro </h3>
+	<button class="special" type="submit"> Sí, Eliminar</button>
+	<blockquote><a href="{% url 'parcial1:principal' %}"">Cancelar</a></blockquote>
+<h3>
+</h3>
+</form>
+
+{% endblock %}

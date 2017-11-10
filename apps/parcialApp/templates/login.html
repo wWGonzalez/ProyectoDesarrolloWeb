@@ -1,0 +1,24 @@
+{% extends 'heredac.html '%}
+
+{% block contenido %}
+
+<section id="one" class="wrapper style5">
+<h4>Ingreso</h4>
+	<form method="post">
+		{% csrf_token %}
+		<div class="row uniform">
+			<div class="6u 12u$(xsmall)">
+				Usuario: {{ form.username }}
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				Contrasena: {{ form.password }}
+			</div>
+			<ul class="actions">
+					<li><input type="submit" value="Acceder" class="special"/></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</section>
+
+{% endblock %}

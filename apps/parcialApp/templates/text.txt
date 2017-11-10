@@ -1,0 +1,185 @@
+--------------------------texto-----------------------------
+								<section>
+									<h4>Form</h4>
+									<form method="post">
+										{% csrf_token %}
+										<div class="row uniform">
+											<div class="6u 12u$(xsmall)">
+												Nombre: {{ form.nombre }}
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												DPI: {{ form.dpi }}
+											</div>
+											<ul class="actions">
+													<li><input type="submit" value="Agregar" class="special"/></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+
+
+/////////////////cliente
+
+<form method = "POST" class="form-horizontal">
+		{% csrf_token %}
+		<table class="form-group">
+		<tr>
+			
+			<td class="form-control">Nombre: {{ form.nombre }}</td>
+			<td>DPI: {{ form.dpi }}</td>
+			<td>
+				<button type="submit" value="Submit" class="btn btn-success"">Agregar</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="{% url 'parcial1:listaCliente' %}" class="btn btn-success">Lista de clientes</a>
+			</td>
+		</tr>
+		</table>
+	</form>
+
+
+
+/////////////////////login////////////////////////
+<!--
+<center>
+	<h4>Usuario</h4>
+	<input type="text" name="user">
+	<h4>Contrasena</h4>
+	<input type="text" name="password">
+	<br>
+	<br>
+	<button type="submit" value="Submit" class="btn btn-success" onclick="clicked()">Agregar</button>
+	<br>
+	<br>
+</center>
+-->
+<form method = "POST">
+	{% csrf_token %}
+	<center>
+		<div>
+			<div class="btn btn-success">
+				<center>
+				<label>Usuario</label>
+				{{ form.username }}
+				</center>
+			</div>
+		</div>
+		<br>
+		<div>
+			<div class="btn btn-success">
+				<center>
+				<label>Contrasena</label>
+				{{ form.password }}
+				</center>
+			</div>
+			<br>
+		</div>
+		<button type="submit" value="Submit" class="btn btn-success">Acceder</button>
+	</center>
+</form>
+<br>
+<br>
+///////////////////////end login///////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////empleado/////////////////////////////
+	<form method = "POST">
+		{% csrf_token %}
+		<table class="table table-striped table-hover">
+		<tr>
+			<td>Nombre: {{ form.nombre }}</td>
+			<td>DPI: {{ form.dpi }}</td>
+			<td>Telefono: {{ form.telefono }}</td>
+			<td>
+				<button type="submit" value="Submit" class="btn btn-success">Agregar</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="{% url 'parcial1:listaEmpleado' %}" class="btn btn-success">Lista de empleados</a>
+			</td>
+		</tr>
+		</table>
+	</form>
+
+
+
+
+
+
+
+	////////////////////////////end empleado ////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////pedido////////////////////////
+		<form method = "POST">
+		{% csrf_token %}		
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 conForm">
+        <h5>Registro de Habitaciones</h5>
+        <p>Aca puedes registrar las habitaciones, si entras y ves la lista notaras que puedes editarlas y eliminarlas si asi es necesario</p>
+        <div id="message"></div>
+          <td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Tipo de habitacion: {{ form.tipo }}</td>
+          <br>
+          
+          <td>Nit: {{ form.nit }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Nombre del negocio: {{ form.nombre_de_negocio }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Cantidad: {{ form.cantidad }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Tamano: {{ form.tamano }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Tipo de papel: {{ form.tipo_papel }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Cliente: {{ form.cliente_pedido }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Empleado: {{ form.empleado_pedido }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Precio del pedido: {{ form.precio }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Estado de la entrega: {{ form.estado }}</td>
+			<br>
+			<td class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Fecha de la entrega: {{ form.fecha_entrega }}</td>
+			<br>
+			
+          <button type="submit" value="Submit" class="submitBnt">Agregar pedido</button>
+          
+          <br>
+          <br>
+
+          <center>
+			<a href="{% url 'parcial1:listaPedido' %}" class="btn btn-success">Lista de pedidos</a>
+		</center>
+          <div id="simple-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+	</form>

@@ -1,0 +1,10 @@
+ya que para guardar datos utilizaremos mysql
+
+es necesario que cambien algunas cosas en su rol, como:
+- crear una base de datos vacia llamada 'web'
+- hacer un migrate de los modelos ya creados para cargarlos a la bd
+- modificar los datos que permiten la conexion en el fichero setting.py de la carpeta principal
+
+
+------------- algo ultimo ----------------------
+tengo un problema al realizar el ingreso de los pedidos, no los guarda ni los registra en la bd... seguire analizandolo pero espero que lo revicen y si detectan y solucionan el error no duden en hacerlo saber.
