@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
 	url(r'^parcial1/', include('apps.parcialApp.urls', namespace = 'parcial1')),
+	url(r'^usuario/', include('apps.usuario.urls',namespace='usuario')),
     url(r'^admin/', admin.site.urls),
 ]
 

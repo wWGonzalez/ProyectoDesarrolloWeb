@@ -1,0 +1,28 @@
+
+{% extends 'heredac.html' %}
+
+{%block contenido %}
+<form method="POST" class="wrapper style5">
+ {% csrf_token %}
+ <h4>
+ <br>
+ Nombre de usuario <br>
+	{{form.username}}
+ <br>
+ Nombre <br>
+	{{form.first_name}}
+ <br>
+ Correo <br>
+	{{form.email}}
+ <br>
+  Contraseña <br>
+	{{form.password1}}
+ <br>
+  Confirmar Contraseña <br>
+	{{form.password2}}
+ <br>
+La contraseña debe contener letras y numeros
+</h4>
+<button type="submit" class="btn btn-primary">Guardar</button>
+
+{% endblock %}

@@ -23,9 +23,7 @@ class vistaEmpleado(CreateView):
 class listaEmpleado(ListView):
 	template_name = 'listaEmpleado.html'
 	model = empleado
-
-	def get_queryset(self):
-		return empleado.objects.all()
+	paginate_by =10
 
 class editar_empleado(UpdateView):
 	template_name = 'empleado.html'
@@ -49,9 +47,7 @@ class vistaCliente(CreateView):
 class listaCliente(ListView):
 	template_name = 'listaCliente.html'
 	model = cliente
-
-	def get_queryset(self):
-		return cliente.objects.all()
+	paginate_by =10
 
 class editar_cliente(UpdateView):
 	template_name = 'cliente.html'
@@ -75,9 +71,7 @@ class vistaPedido(CreateView):
 class listaPedido(ListView):
 	template_name = 'listaPedido.html'
 	model = pedido
-
-	def get_queryset(self):
-		return pedido.objects.all()
+	paginate_by =10
 
 class editar_pedido(UpdateView):
 	template_name = 'pedido.html'

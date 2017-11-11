@@ -39,6 +39,7 @@
 											<li><a href="{% url 'parcial1:empleado' %}">Empleado</a></li>
 											<li><a href="{% url 'parcial1:cliente' %}">Cliente</a></li>
 											<li><a href="{% url 'parcial1:pedido' %}">Pedido</a> </li>
+											<li><a href="{% url 'usuario:Registro' %}" class="btn btn-default">Registro</a></li>
 											<form method = "POST">
 											{% csrf_token %}
 											<li><a href="{% url 'parcial1:logout' %}">cerrar sesion</a></li>
@@ -46,7 +47,8 @@
 											{% endif %}
 
 		{% if user.is_authenticated == False %}
-			<li><a href="{% url 'parcial1:login' %}" class="btn btn-default">login</a></li>		
+			<li><a href="{% url 'parcial1:login' %}" class="btn btn-default">login</a></li>	
+
 		{% endif %}
 										</ul>
 									</div>
